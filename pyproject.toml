@@ -1,0 +1,24 @@
+[project]
+name = "conv4bit"
+version = "0.0.1"
+authors = [
+  { name="Jordan Torbiak", email="torbiak@gmail.com" },
+]
+description = "Convert 4-bit terminal colorthemes between formats."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pyyaml",
+]
+
+[project.scripts]
+conv4bit = "conv4bit:main"
+
+[project.urls]
+Homepage = "https://github.com/torbiak/conv4bit"
+Issues = "https://github.com/torbiak/conv4bit/issues"
