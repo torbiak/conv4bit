@@ -244,8 +244,9 @@ def read_xres(r: IO) -> Theme:
     for line in r:
         if line.startswith('!') or re.search(r'^\s*$', line):
             continue
-        if m := re.search(r'[^:]*\.([^:]+): *(#[a-fA-F0-9]{6})', line):
+        if m := re.search(r'([^:]+): *(#[a-fA-F0-9]{6})', line):
             label, hex = m.groups()
+            label = re.sub(r'.*[.*]', '', label)  # remove up to last '*' or '.'
             color = Color.parse(hex)
             if label in {'foreground', 'background'}:
                 color_dict[label] = color
