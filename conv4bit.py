@@ -315,8 +315,10 @@ OFORMATS: dict[str, Callable[[IO, Theme], None]] = {
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description='''
-convert 4-bit terminal color schemes between formats
+    ap = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description='''\
+convert 4-bit terminal color schemes between formats.
 
 Formats are guessed from filenames but can also be given with --ifmt/--ofmt.
 ''')
